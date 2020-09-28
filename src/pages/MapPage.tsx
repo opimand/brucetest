@@ -1,5 +1,5 @@
 import React, { useState} from 'react'
-import {YMaps, Map, Placemark} from "react-yandex-maps";
+import { YMaps, Map, Placemark } from "react-yandex-maps";
 
 
   export const SimpleMap = () => {
@@ -13,8 +13,11 @@ import {YMaps, Map, Placemark} from "react-yandex-maps";
       if( e.key === 'Enter' ){
          if(map) {
            const geoCode: any = map.geocode(query)
+           console.log("geoCode", geoCode)
            geoCode.then(
              function (res: any) {
+               console.log("res", res)
+
                const firstGeoObject = res.geoObjects.get(0)
                const coords = firstGeoObject.geometry.getCoordinates()
 
